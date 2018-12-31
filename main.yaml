@@ -1,8 +1,48 @@
-"Parameters" : {
-  "InstanceTypeParameter" : {
-    "Type" : "String",
-    "Default" : "t2.micro",
-    "AllowedValues" : ["t2.micro", "m1.small", "m1.large"],
-    "Description" : "Enter t2.micro, m1.small, or m1.large. Default is t2.micro."
-  }
-}
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters: 
+  InstanceTypeParameter: 
+    Type: String
+    Default: t2.micro
+    AllowedValues: 
+      - t2.micro
+      - m1.small
+      - m1.large
+    Description: Enter t2.micro, m1.small, or m1.large. Default is t2.micro.
+  InstanceKeyPair:
+    Type: String
+    Description: Please enter your key name .
+  VpcId:
+    Type: String
+    Description: enter the vpc id.
+  SecurityGroup: 
+    Type: String 
+    Description: Enter the security group id.
+  SubnetId: 
+    Type: String
+    Description: enter the key pair id .
+    
+Metadata:
+  'AWS::CloudFormation::Designer':
+    6e34e3b9-a933-433b-a505-82ec6c9b9241:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -111
+        'y': -11.5
+      z: 0
+Resources:
+  FirstInstance:
+    Type: 'AWS::EC2::Instance'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6e34e3b9-a933-433b-a505-82ec6c9b9241
+
+  S3B78YK:
+    Type: 'AWS::S3::Bucket'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b8c8c7d6-db5e-4d16-883e-a31f2da2f0bc
